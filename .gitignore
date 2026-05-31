@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+
+# Node (for frontend later)
+node_modules/
+.next/
+.env.local
+
+# General
+.DS_Store
+*.log
