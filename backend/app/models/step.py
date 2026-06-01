@@ -5,7 +5,7 @@ class Step(BaseModel):
     step_index: int
     total_steps: int
     description: str
-    state:list[any]
+    state:list
     highlighted: list[int]
     swapped: list[int]
     phase: str | None = None
