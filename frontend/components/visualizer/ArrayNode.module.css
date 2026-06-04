@@ -1,0 +1,54 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.node {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.nodeDefault {
+  background-color: #1F2937;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.nodeHighlight {
+  background-color: rgba(59, 130, 246, 0.35);
+  border-color: #3B82F6;
+  border-width: 2px;
+  transform: translateY(-4px);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+}
+
+.nodeSwap {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-color: #EF4444;
+  transform: translateY(-4px);
+}
+
+.nodeSorted {
+  background-color: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+.index {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: #4B5563;
+}

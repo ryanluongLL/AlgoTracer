@@ -18,7 +18,7 @@ export interface Step{
     description: string;
     state: any[];
     highlighted: number[];
-    swapper: number[];
+    swapped: number[];
     phase: string | null;
 }
 
@@ -56,7 +56,7 @@ export async function explainStep(
         algorithm,
         step_index: step.step_index,
         total_steps: step.total_steps,
-        decription: step.description,
+        description: step.description,
         state: step.state,
         highlighted: step.highlighted,
         phase: step.phase,
