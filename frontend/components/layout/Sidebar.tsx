@@ -6,6 +6,7 @@ import styles from "./Sidebar.module.css";
 interface SidebarProps {
   selectedAlgorithm: string;
   onRun: (algorithm: string, data: number[], target?: number, operation?: string) => void;
+  onAlgorithmChange: (algorithm: string) => void;
   inputData: number[];
   setInputData: (data: number[]) => void;
   isLoading: boolean;
@@ -56,6 +57,7 @@ const operationOptions: Record<string, string[]> = {
 export default function Sidebar({
   selectedAlgorithm,
   onRun,
+  onAlgorithmChange,
   inputData,
   setInputData,
   isLoading,
@@ -101,7 +103,22 @@ export default function Sidebar({
     if (operationOptions[value]) {
       setOperation(operationOptions[value][0]);
     }
+  
+    onAlgorithmChange(value);
+  
+    const isSearchingAlgo = SEARCHING.includes(value);
+    const isDataStructureAlgo = DATA_STRUCTURES.includes(value);
+  
+    if (isSearchingAlgo) return;
+  
     const parsed = parseInput(inputRaw) ?? inputData;
+  
+    if (isDataStructureAlgo) {
+      const op = operationOptions[value]?.[0] ?? "traverse";
+      onRun(value, parsed, undefined, op);
+      return;
+    }
+  
     onRun(value, parsed);
   };
 

@@ -1,9 +1,8 @@
 .page {
-  background-color: #0A0F1E;
+  background-color: #F9FAFB;
   min-height: 100vh;
 }
 
-/* Hero */
 .hero {
   min-height: 100vh;
   padding-top: 80px;
@@ -26,7 +25,7 @@
 .heroLabel {
   font-family: "JetBrains Mono", monospace;
   font-size: 12px;
-  color: #9CA3AF;
+  color: #6B7280;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 24px;
@@ -35,14 +34,14 @@
 .heroTitle {
   font-size: 56px;
   font-weight: 800;
-  color: white;
+  color: #0F172A;
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 32px;
 }
 
 .heroTitleAccent {
-  color: #3B82F6;
+  color: #6366F1;
 }
 
 .heroCta {
@@ -50,8 +49,8 @@
   align-items: center;
   gap: 10px;
   padding: 12px 24px;
-  background-color: white;
-  color: #0A0F1E;
+  background-color: #0F172A;
+  color: white;
   font-weight: 700;
   font-size: 14px;
   border-radius: 8px;
@@ -61,7 +60,7 @@
 }
 
 .heroCta:hover {
-  background-color: #E5E7EB;
+  background-color: #1E293B;
   transform: translateY(-1px);
 }
 
@@ -71,7 +70,7 @@
   gap: 8px;
   margin-left: 16px;
   padding: 12px 24px;
-  color: #6B7280;
+  color: #9CA3AF;
   font-weight: 500;
   font-size: 14px;
   text-decoration: none;
@@ -79,7 +78,7 @@
 }
 
 .heroCtaSecondary:hover {
-  color: white;
+  color: #0F172A;
 }
 
 .heroActions {
@@ -87,17 +86,17 @@
   align-items: center;
 }
 
-/* Mock visualizer */
 .heroRight {
   position: relative;
 }
 
 .mockVisualizer {
-    background-color: #111827;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    padding: 32px;
-    font-family: "JetBrains Mono", monospace;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 32px;
+  font-family: "JetBrains Mono", monospace;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 .mockHeader {
@@ -108,19 +107,19 @@
 }
 
 .mockAlgoName {
-    font-size: 12px;
-    color: #9CA3AF;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+  font-size: 12px;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
-  
+
 .mockStep {
-    font-size: 12px;
-    color: #9CA3AF;
+  font-size: 12px;
+  color: #6B7280;
 }
 
 .mockStepAccent {
-  color: #3B82F6;
+  color: #6366F1;
 }
 
 .mockNodes {
@@ -143,50 +142,49 @@
 }
 
 .mockNodeDefault {
-    background-color: #1F2937;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #6B7280;
+  background-color: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  color: #9CA3AF;
 }
 
 .mockNodeHighlight {
-  background-color: rgba(59, 130, 246, 0.2);
-  border: 1px solid #3B82F6;
-  color: #3B82F6;
+  background-color: #EEF2FF;
+  border: 1px solid #6366F1;
+  color: #6366F1;
 }
 
 .mockNodeSwap {
-  background-color: rgba(239, 68, 68, 0.2);
+  background-color: #FEF2F2;
   border: 1px solid #EF4444;
   color: #EF4444;
 }
 
 .mockNodeSorted {
-  background-color: rgba(16, 185, 129, 0.2);
+  background-color: #ECFDF5;
   border: 1px solid #10B981;
   color: #10B981;
 }
 
 .mockDescription {
   font-size: 12px;
-  color: #9CA3AF;
+  color: #6B7280;
   margin-bottom: 16px;
   padding: 12px;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: #F9FAFB;
   border-radius: 6px;
-  border-left: 2px solid #3B82F6;
+  border-left: 2px solid #6366F1;
 }
 
 .mockExplanation {
-    font-size: 12px;
-    color: #9CA3AF;
-    line-height: 1.6;
-    font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #6B7280;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
 }
 
-/* Divider strip */
 .strip {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid #E5E7EB;
+  border-bottom: 1px solid #E5E7EB;
   padding: 16px 48px;
   display: flex;
   align-items: center;
@@ -199,7 +197,7 @@
 .stripItem {
   font-family: "JetBrains Mono", monospace;
   font-size: 12px;
-  color: #9CA3AF;
+  color: #6B7280;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -209,10 +207,9 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: #3B82F6;
+  background-color: #6366F1;
 }
 
-/* Algorithms section */
 .algoSection {
   max-width: 1200px;
   margin: 80px auto 0;
@@ -229,27 +226,27 @@
 .algoSectionTitle {
   font-size: 20px;
   font-weight: 700;
-  color: white;
+  color: #0F172A;
   letter-spacing: -0.02em;
 }
 
 .algoSectionCount {
   font-family: "JetBrains Mono", monospace;
   font-size: 12px;
-  color: #4B5563;
+  color: #9CA3AF;
 }
 
 .algoGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: #E5E7EB;
   border-radius: 12px;
   overflow: hidden;
 }
 
 .algoCategory {
-  background-color: #0A0F1E;
+  background-color: #FFFFFF;
   padding: 28px;
 }
 
@@ -274,7 +271,7 @@
 
 .algoItem {
   font-size: 14px;
-  color: #9CA3AF;
+  color: #374151;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -283,12 +280,12 @@
 }
 
 .algoItem:hover {
-  color: #F9FAFB;
+  color: #0F172A;
 }
 
 .algoItemIndex {
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
-  color: #6B7280;
+  color: #9CA3AF;
   min-width: 20px;
 }

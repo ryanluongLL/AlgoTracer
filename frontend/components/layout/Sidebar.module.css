@@ -14,7 +14,7 @@
 .label {
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
-  color: #4B5563;
+  color: #9CA3AF;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -22,10 +22,10 @@
 .input {
   width: 100%;
   padding: 8px 12px;
-  background-color: #111827;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
   border-radius: 8px;
-  color: white;
+  color: #0F172A;
   font-family: "JetBrains Mono", monospace;
   font-size: 13px;
   outline: none;
@@ -33,11 +33,11 @@
 }
 
 .input:focus {
-  border-color: rgba(59, 130, 246, 0.5);
+  border-color: #6366F1;
 }
 
 .input::placeholder {
-  color: #374151;
+  color: #D1D5DB;
 }
 
 .error {
@@ -54,9 +54,9 @@
 .opButton {
   padding: 5px 10px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid #E5E7EB;
   background-color: transparent;
-  color: #6B7280;
+  color: #9CA3AF;
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
   cursor: pointer;
@@ -65,14 +65,14 @@
 }
 
 .opButton:hover {
-  color: white;
-  border-color: rgba(255, 255, 255, 0.2);
+  color: #0F172A;
+  border-color: #D1D5DB;
 }
 
 .opButtonActive {
-  background-color: rgba(59, 130, 246, 0.15);
-  border-color: rgba(59, 130, 246, 0.4);
-  color: #3B82F6;
+  background-color: #EEF2FF;
+  border-color: #C7D2FE;
+  color: #6366F1;
 }
 
 .runButton {
@@ -80,7 +80,7 @@
   padding: 10px;
   border-radius: 8px;
   border: none;
-  background-color: #3B82F6;
+  background-color: #0F172A;
   color: white;
   font-weight: 600;
   font-size: 13px;
@@ -89,7 +89,7 @@
 }
 
 .runButton:hover:not(:disabled) {
-  background-color: rgba(59, 130, 246, 0.8);
+  background-color: #1E293B;
 }
 
 .runButton:disabled {
@@ -99,7 +99,7 @@
 
 .divider {
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: #F3F4F6;
 }
 
 .category {
@@ -126,7 +126,7 @@
 
 .algoButton {
   width: 100%;
-  padding: 8px 8px;
+  padding: 8px;
   border-radius: 6px;
   border: none;
   background-color: transparent;
@@ -138,11 +138,11 @@
 }
 
 .algoButton:hover {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: #D1D5DB;
+  background-color: #F3F4F6;
+  color: #0F172A;
 }
 
 .algoButtonActive {
-  background-color: rgba(59, 130, 246, 0.1);
-  color: #3B82F6;
+  background-color: #EEF2FF;
+  color: #6366F1;
 }

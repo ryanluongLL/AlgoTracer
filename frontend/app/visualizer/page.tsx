@@ -5,8 +5,8 @@ import styles from "./page.module.css";
 import Sidebar from "@/components/layout/Sidebar";
 import Canvas from "@/components/visualizer/Canvas";
 import Controls from "@/components/visualizer/Controls";
-import ExplainPanel from "@/components/visualizer/ExplainPanel";
-import { runAlgorithm, explainStep, Step } from "@/lib/api";
+import PseudocodePanel from "@/components/visualizer/PseudocodePanel";
+import { runAlgorithm, Step } from "@/lib/api";
 
 export default function VisualizerPage() {
   const [steps, setSteps] = useState<Step[]>([]);
@@ -15,24 +15,15 @@ export default function VisualizerPage() {
   const [speed, setSpeed] = useState(1500);
   const [selectedAlgorithm, setSelectedAlgorithm] = useState("bubble_sort");
   const [inputData, setInputData] = useState([5, 3, 8, 1, 9, 2]);
-  const [explanation, setExplanation] = useState("");
-  const [isLoadingExplanation, setIsLoadingExplanation] = useState(false);
   const [isLoadingAlgorithm, setIsLoadingAlgorithm] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const fetchExplanation = useCallback(async (step: Step, algorithm: string) => {
-    setIsLoadingExplanation(true);
-    try {
-      const result = await explainStep(algorithm, step);
-      setExplanation(result);
-    } catch {
-      setExplanation("Could not load explanation.");
-    } finally {
-      setIsLoadingExplanation(false);
-    }
-  }, []);
-
-  const handleRun = useCallback(async (algorithm: string, data: number[], target?: number, operation?: string) => {
+  const handleRun = useCallback(async (
+    algorithm: string,
+    data: number[],
+    target?: number,
+    operation?: string
+  ) => {
     setIsPlaying(false);
     setIsLoadingAlgorithm(true);
     try {
@@ -40,50 +31,32 @@ export default function VisualizerPage() {
       setSteps(response.steps);
       setCurrentStep(0);
       setSelectedAlgorithm(algorithm);
-      fetchExplanation(response.steps[0], algorithm);
     } catch {
-      setExplanation("Failed to run algorithm.");
+      console.error("Failed to run algorithm.");
     } finally {
       setIsLoadingAlgorithm(false);
     }
-  }, [fetchExplanation]);
+  }, []);
 
   // Auto play
   useEffect(() => {
-    if (!isPlaying) return;
-  
-    let cancelled = false;
-  
-    const advance = async () => {
-      if (cancelled) return;
-  
-      setCurrentStep((prev) => {
-        if (prev >= steps.length - 1) {
-          setIsPlaying(false);
-          return prev;
-        }
-        const next = prev + 1;
-        fetchExplanation(steps[next], selectedAlgorithm).then(() => {
-          if (!cancelled && isPlaying) {
-            setTimeout(advance, speed);
+    if (isPlaying) {
+      intervalRef.current = setInterval(() => {
+        setCurrentStep((prev) => {
+          if (prev >= steps.length - 1) {
+            setIsPlaying(false);
+            return prev;
           }
+          return prev + 1;
         });
-        return next;
-      });
-    };
-  
-    setTimeout(advance, speed);
-  
+      }, speed);
+    } else {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    }
     return () => {
-      cancelled = true;
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [isPlaying]);
-
-  // Fetch explanation when step changes
-  useEffect(() => {
-    if (steps.length === 0 || isPlaying) return;
-    fetchExplanation(steps[currentStep], selectedAlgorithm);
-  }, [currentStep]);
+  }, [isPlaying, speed, steps.length]);
 
   const handleStepForward = () => {
     if (currentStep < steps.length - 1) setCurrentStep((p) => p + 1);
@@ -103,6 +76,10 @@ export default function VisualizerPage() {
     setIsPlaying(false);
   };
 
+  const handleAlgorithmChange = (algorithm: string) => {
+    setSelectedAlgorithm(algorithm);
+  };
+
   // Run default on mount
   useEffect(() => {
     handleRun("bubble_sort", inputData);
@@ -117,6 +94,7 @@ export default function VisualizerPage() {
           <Sidebar
             selectedAlgorithm={selectedAlgorithm}
             onRun={handleRun}
+            onAlgorithmChange={handleAlgorithmChange}
             inputData={inputData}
             setInputData={setInputData}
             isLoading={isLoadingAlgorithm}
@@ -132,10 +110,9 @@ export default function VisualizerPage() {
         </div>
 
         <div className={styles.explainPanel}>
-          <ExplainPanel
+          <PseudocodePanel
             step={activeStep}
-            explanation={explanation}
-            isLoading={isLoadingExplanation}
+            algorithm={selectedAlgorithm}
           />
         </div>
       </div>

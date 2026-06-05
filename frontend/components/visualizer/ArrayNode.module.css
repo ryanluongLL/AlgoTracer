@@ -17,38 +17,40 @@
 }
 
 .nodeDefault {
-  background-color: #1F2937;
-  border-color: rgba(255, 255, 255, 0.15);
+  background-color: #F3F4F6;
+  border-color: #E5E7EB;
 }
 
 .nodeHighlight {
-  background-color: rgba(59, 130, 246, 0.35);
-  border-color: #3B82F6;
+  background-color: #EEF2FF;
+  border-color: #6366F1;
   border-width: 2px;
   transform: translateY(-4px);
-  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
 .nodeSwap {
-  background-color: rgba(239, 68, 68, 0.2);
+  background-color: #FEF2F2;
   border-color: #EF4444;
+  border-width: 2px;
   transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
 }
 
 .nodeSorted {
-  background-color: rgba(16, 185, 129, 0.15);
-  border-color: rgba(16, 185, 129, 0.4);
+  background-color: #ECFDF5;
+  border-color: #10B981;
 }
 
 .value {
   font-family: "JetBrains Mono", monospace;
   font-size: 16px;
   font-weight: 600;
-  color: white;
+  color: #0F172A;
 }
 
 .index {
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
-  color: #4B5563;
+  color: #9CA3AF;
 }
