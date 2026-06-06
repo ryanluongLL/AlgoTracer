@@ -1,0 +1,270 @@
+/* Stack */
+.stackWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stackLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  color: #9CA3AF;
+  letter-spacing: 0.1em;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 60px;
+}
+
+.stackNode {
+  width: 200px;
+  padding: 12px 16px;
+  background-color: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s;
+}
+
+.stackNodeTop {
+  background-color: #EEF2FF;
+  border-color: #C7D2FE;
+}
+
+.stackNodeHighlight {
+  background-color: #EEF2FF;
+  border-color: #6366F1;
+  border-width: 2px;
+  transform: translateX(4px);
+}
+
+.stackTopLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: #6366F1;
+}
+
+.emptySlot {
+  width: 200px;
+  padding: 12px 16px;
+  border: 1px dashed #E5E7EB;
+  border-radius: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: #D1D5DB;
+  text-align: center;
+}
+
+/* Queue */
+.queueWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.queueEndLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  color: #9CA3AF;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+}
+
+.queue {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.queueNodeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.queueNode {
+  padding: 12px 16px;
+  background-color: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+  min-width: 56px;
+}
+
+.queueNodeHighlight {
+  background-color: #EEF2FF;
+  border-color: #6366F1;
+  border-width: 2px;
+  transform: translateY(-4px);
+}
+
+.queuePosLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  color: #9CA3AF;
+}
+
+.arrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
+  color: #D1D5DB;
+}
+
+/* Shared */
+.nodeValue {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+/* Linked List */
+.linkedListWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.linkedList {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.headLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  color: #9CA3AF;
+  letter-spacing: 0.1em;
+  margin-right: 8px;
+}
+
+.linkedListNodeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.linkedListNode {
+  width: 64px;
+  height: 64px;
+  background-color: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.linkedListNodeHighlight {
+  background-color: #EEF2FF;
+  border-color: #6366F1;
+  border-width: 2px;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.pointer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointerDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #D1D5DB;
+}
+
+.linkedArrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
+  color: #D1D5DB;
+}
+
+.nullLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: #D1D5DB;
+  margin-left: 4px;
+}
+
+/* BST */
+.bstWrapper {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.bstNodeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.bstNode {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.bstNodeHighlight {
+  background-color: #EEF2FF;
+  border-color: #6366F1;
+  border-width: 2px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.bstChildren {
+  display: flex;
+  gap: 16px;
+  margin-top: 0;
+}
+
+.bstChild {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bstConnector {
+  width: 1px;
+  height: 24px;
+  background-color: #E5E7EB;
+}
+
+.bstEmpty {
+  width: 52px;
+  height: 52px;
+}

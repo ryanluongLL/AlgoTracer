@@ -2,6 +2,7 @@
 import styles from "./Canvas.module.css"
 import ArrayNode from "./ArrayNode"
 import { Step } from "@/lib/api"
+import DataStructureCanvas from "./DataStructureCanvas";
 
 interface CanvasProps{
     step: Step | null;
@@ -65,13 +66,11 @@ export default function Canvas({ step, isLoading, algorithm }: CanvasProps) {
 
             {/* Data structure text fallback */}
             {!isArrayAlgorithm && (
-                <div className={styles.dsWrapper}>
-                    <pre className={styles.dsState}>
-                        {JSON.stringify(step.state, null, 2)}
-                    </pre>
-                </div>
+                <DataStructureCanvas
+                    step={step}
+                    algorithm={algorithm}
+                />
             )}
-
             {/* Step counter */}
             <div className={styles.stepCounter}>
                 <span className={styles.stepText}>
