@@ -25,7 +25,11 @@ app.add_middleware(
 app.include_router(algorithms.router, prefix="/api/algorithms", tags=["algorithms"])
 app.include_router(explain.router, prefix="/api/explain", tags=["explain"])
 
+@app.on_event("startup")
+async def startup_check():
+    if not settings.anthropic_api_key:
+        raise RuntimeError("ANTHROPIC_API_KEY is not set in your .env file")
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {"status": "ok"} 

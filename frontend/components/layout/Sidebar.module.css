@@ -1,0 +1,148 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  color: #0F172A;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input:focus {
+  border-color: #6366F1;
+}
+
+.input::placeholder {
+  color: #D1D5DB;
+}
+
+.error {
+  font-size: 11px;
+  color: #EF4444;
+}
+
+.operationButtons {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.opButton {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+  background-color: transparent;
+  color: #9CA3AF;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: lowercase;
+}
+
+.opButton:hover {
+  color: #0F172A;
+  border-color: #D1D5DB;
+}
+
+.opButtonActive {
+  background-color: #EEF2FF;
+  border-color: #C7D2FE;
+  color: #6366F1;
+}
+
+.runButton {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0F172A;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.runButton:hover:not(:disabled) {
+  background-color: #1E293B;
+}
+
+.runButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.divider {
+  height: 1px;
+  background-color: #F3F4F6;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.categoryLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0 8px;
+  margin-bottom: 2px;
+}
+
+.algorithmList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.algoButton {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background-color: transparent;
+  color: #6B7280;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.algoButton:hover {
+  background-color: #F3F4F6;
+  color: #0F172A;
+}
+
+.algoButtonActive {
+  background-color: #EEF2FF;
+  color: #6366F1;
+}

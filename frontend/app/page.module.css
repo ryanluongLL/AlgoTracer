@@ -1,0 +1,291 @@
+.page {
+  background-color: #F9FAFB;
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heroLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: #6B7280;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.heroTitle {
+  font-size: 56px;
+  font-weight: 800;
+  color: #141d31c7;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+
+.heroTitleAccent {
+  color: #141d31c7;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background-color: #0F172A;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.15s, transform 0.15s;
+  letter-spacing: -0.01em;
+}
+
+.heroCta:hover {
+  background-color: #1E293B;
+  transform: translateY(-1px);
+}
+
+.heroCtaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+  padding: 12px 24px;
+  color: #9CA3AF;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.heroCtaSecondary:hover {
+  color: #0F172A;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+}
+
+.heroRight {
+  position: relative;
+}
+
+.mockVisualizer {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 32px;
+  font-family: "JetBrains Mono", monospace;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.mockHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.mockAlgoName {
+  font-size: 12px;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.mockStep {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.mockStepAccent {
+  color: #6366F1;
+}
+
+.mockNodes {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 32px;
+  height: 100px;
+}
+
+.mockNode {
+  flex: 1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.mockNodeDefault {
+  background-color: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  color: #9CA3AF;
+}
+
+.mockNodeHighlight {
+  background-color: #EEF2FF;
+  border: 1px solid #6366F1;
+  color: #6366F1;
+}
+
+.mockNodeSwap {
+  background-color: #FEF2F2;
+  border: 1px solid #EF4444;
+  color: #EF4444;
+}
+
+.mockNodeSorted {
+  background-color: #ECFDF5;
+  border: 1px solid #10B981;
+  color: #10B981;
+}
+
+.mockDescription {
+  font-size: 12px;
+  color: #6B7280;
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #F9FAFB;
+  border-radius: 6px;
+  border-left: 2px solid #6366F1;
+}
+
+.mockExplanation {
+  font-size: 12px;
+  color: #6B7280;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+}
+
+.strip {
+  border-top: 1px solid #E5E7EB;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stripItem {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: #6B7280;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stripDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #6366F1;
+}
+
+.algoSection {
+  max-width: 1200px;
+  margin: 80px auto 0;
+  padding: 0 48px 120px;
+}
+
+.algoSectionHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.algoSectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0F172A;
+  letter-spacing: -0.02em;
+}
+
+.algoSectionCount {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: #9CA3AF;
+}
+
+.algoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: #E5E7EB;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.algoCategory {
+  background-color: #FFFFFF;
+  padding: 28px;
+}
+
+.algoCategoryLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.algoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.algoItem {
+  font-size: 14px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.15s;
+  cursor: default;
+}
+
+.algoItem:hover {
+  color: #0F172A;
+}
+
+.algoItemIndex {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: #9CA3AF;
+  min-width: 20px;
+}
