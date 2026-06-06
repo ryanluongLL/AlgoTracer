@@ -34,14 +34,14 @@
 .heroTitle {
   font-size: 56px;
   font-weight: 800;
-  color: #0F172A;
+  color: #141d31c7;
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 32px;
 }
 
 .heroTitleAccent {
-  color: #6366F1;
+  color: #141d31c7;
 }
 
 .heroCta {
