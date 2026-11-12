@@ -1,15 +1,14 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from app.config import settings
-from app.routers import algorithms, explain
+from app.routers import algorithms
 
 limiter = Limiter(key_func=get_remote_address)
 
-app = FastAPI(title="Tracer", version="1.0.0")
+app = FastAPI(title="Tracer", version="2.0.0")
 
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
@@ -23,12 +22,7 @@ app.add_middleware(
 )
 
 app.include_router(algorithms.router, prefix="/api/algorithms", tags=["algorithms"])
-app.include_router(explain.router, prefix="/api/explain", tags=["explain"])
 
-@app.on_event("startup")
-async def startup_check():
-    if not settings.anthropic_api_key:
-        raise RuntimeError("ANTHROPIC_API_KEY is not set in your .env file")
 
 @app.get("/health")
 def health():
