@@ -8,14 +8,17 @@ import Controls from "@/components/visualizer/Controls";
 import PseudocodePanel from "@/components/visualizer/PseudocodePanel";
 import { runAlgorithm, Step } from "@/lib/api";
 
+const DEFAULT_ALGORITHM = "bubble_sort";
+const DEFAULT_INPUT = [5, 3, 8, 1, 9, 2];
+
 export default function VisualizerPage() {
   const [steps, setSteps] = useState<Step[]>([]);
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1500);
-  const [selectedAlgorithm, setSelectedAlgorithm] = useState("bubble_sort");
-  const [inputData, setInputData] = useState([5, 3, 8, 1, 9, 2]);
-  const [isLoadingAlgorithm, setIsLoadingAlgorithm] = useState(false);
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState(DEFAULT_ALGORITHM);
+  const [inputData, setInputData] = useState(DEFAULT_INPUT);
+  const [isLoadingAlgorithm, setIsLoadingAlgorithm] = useState(true);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleRun = useCallback(async (
@@ -36,6 +39,31 @@ export default function VisualizerPage() {
     } finally {
       setIsLoadingAlgorithm(false);
     }
+  }, []);
+
+  // Run the default algorithm once on mount
+  useEffect(() => {
+    let cancelled = false;
+
+    runAlgorithm(DEFAULT_ALGORITHM, DEFAULT_INPUT)
+      .then((response) => {
+        if (!cancelled) {
+          setSteps(response.steps);
+          setCurrentStep(0);
+        }
+      })
+      .catch(() => {
+        console.error("Failed to run algorithm.");
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setIsLoadingAlgorithm(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Auto play
@@ -79,11 +107,6 @@ export default function VisualizerPage() {
   const handleAlgorithmChange = (algorithm: string) => {
     setSelectedAlgorithm(algorithm);
   };
-
-  // Run default on mount
-  useEffect(() => {
-    handleRun("bubble_sort", inputData);
-  }, []);
 
   const activeStep = steps[currentStep] ?? null;
 
